@@ -1,0 +1,13 @@
+# Runtime dependencies — exact pins for reproducibility
+# Install with: pip install -r requirements.txt
+
+# Tinker SDK and cookbook (Thinking Machines Lab)
+tinker==0.22.3
+tinker-cookbook==0.4.1
+
+# Property-based testing (also used at runtime for test utilities)
+hypothesis==6.152.4
+
+# Test runner
+pytest==9.0.3
+pytest-asyncio==1.3.0

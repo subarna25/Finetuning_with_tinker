@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "qwen3-rl-pipeline"
+version = "0.1.0"
+description = "End-to-end RL fine-tuning pipeline for Qwen/Qwen3-8B using the Tinker SDK"
+requires-python = ">=3.11"
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = [
+    "tinker-sdk==0.1.0",
+    "tinker-cookbook==0.3.0",
+    "hypothesis==6.152.4",
+    "pytest==9.0.3",
+    "pytest-asyncio==1.3.0",
+]
+
+[project.scripts]
+qwen3-rl-pipeline = "qwen3_rl_pipeline.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["qwen3_rl_pipeline*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
+ignore = []
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+markers = [
+    "integration: marks tests as integration tests (deselect with '-m not integration')",
+]

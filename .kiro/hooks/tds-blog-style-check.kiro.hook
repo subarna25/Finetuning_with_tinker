@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "TDS Blog Style Check",
+  "description": "Checks that blog post content follows Towards Data Science writing style before saving. Triggers on edits to blog_post.md files.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "blog_post.md",
+      "**/blog_post.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "The user just saved a blog post file. Review the content against the Towards Data Science (TDS) style guide below and flag any violations. Do NOT rewrite the file — only report issues with specific line references and suggested fixes.\n\n---\n\n## ✍️ VOICE & TONE\n\n- **First person, practitioner voice.** Write as someone who actually ran the code: 'I fine-tuned', 'I noticed', 'When I ran this...', 'This tripped me up at first.'\n- **Honest and specific.** Share what worked AND what didn't. Real TDS articles include failed experiments.\n- **Conversational but precise.** Short punchy sentences mixed with longer explanatory ones.\n- **Let results speak.** Avoid hype. Use numbers: '+21 percentage points', '4x faster', '~4.5GB after quantization'.\n- **Genuine curiosity.** Phrases like 'I was surprised to find...', 'This was counterintuitive at first — here's why...' are encouraged.\n\n---\n\n## 🏗️ REQUIRED STRUCTURE (in order)\n\n1. **Hook** — 2–3 sentences. Relatable problem, surprising result, or concrete outcome. NEVER start with 'In this article/post/tutorial I will...'.\n2. **TL;DR** — 3–5 bullet points right after the hook.\n3. **Motivation / Why this matters** — 1–2 short paragraphs.\n4. **Approach overview** — Explain the idea BEFORE showing code.\n5. **Walkthrough** — Interleave prose + code blocks. Every code block must be preceded by a sentence explaining what it does and why.\n6. **Experiments & Results** — Specific numbers, comparisons, surprises.\n7. **Key Takeaways / What I Learned** — 3–5 honest lessons including failures.\n8. **What's Next** — 2–4 forward-looking ideas. No 'In conclusion...' opener.\n9. **Resources / Further Reading** — Links to papers, repos, datasets, tools.\n\n---\n\n## 💻 CODE BLOCKS\n\n- Every snippet must be preceded by a sentence explaining what it does.\n- Keep snippets focused — show the interesting part, not boilerplate imports.\n- Add inline comments on non-obvious lines.\n- Show real output where possible.\n\n---\n\n## 🎨 FORMATTING\n\n- **H2 (`##`)** for main sections, **H3 (`###`)** for subsections.\n- **Bold** key terms on first use: **LoRA**, **GRPO**, **GGUF**, **QLoRA**.\n- Use emoji section headers sparingly for scannability.\n- Include a TL;DR bullet list near the top.\n- End with a Resources section.\n\n---\n\n## 🚫 VIOLATIONS TO FLAG\n\n- Opening with 'In this article/post/tutorial...'\n- Passive voice ('it was found that' → 'I found')\n- Filler phrases: 'It's worth noting', 'As we can see', 'Simply put', 'It goes without saying'\n- Over-explaining basics the TDS audience already knows\n- Clickbait or vague titles — be specific\n- Hiding failures — show what didn't work\n- Code blocks without a preceding explanatory sentence\n- Missing TL;DR or Resources section\n\n---\n\nReport each violation with: section name, the offending text, and a concrete suggestion to fix it."
+  }
+}

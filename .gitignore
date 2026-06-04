@@ -1,0 +1,54 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editors
+.vscode/
+.idea/
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Generated outputs and large artifacts
+output_llm_judge/
+output_llm_judge_V1/
+output_v2/
+output_v3/
+output_v4/
+output_v5/
+output_v6/
+*.png
+*.html
+*.pdf
+*.pptx
+
+# Made with Bob
